@@ -1,0 +1,23 @@
+ 
+
+File_New
+
+;
+
+! ==================================
+! Load files
+! ==================================
+! ==================================
+! ==================================
+Set_Pipeline_Parameter_To_Folder_Path
+/PARAMETER_NAME=FOLDER
+/PARAMETER_VALUE=
+;
+
+Open_File
+/File_Name=::FOLDER&*.c3d
+;
+
+File_Save_As
+/FILE_NAME=::FOLDER&Report.cmz 
+;
