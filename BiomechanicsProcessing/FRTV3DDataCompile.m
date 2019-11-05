@@ -1,5 +1,6 @@
 %dir_1="C:\Users\NeuRRo Lab\Desktop\Katie\Elastic Brace\New Processing 10.2\Kinematics";
-dir_1="C:\Users\ice_q\Desktop\research\data_output";
+%dir_1="C:\Users\ice_q\Desktop\research\data_output";
+
 %Subject=["EB","EC"];
 Subject=["EB2","002"];
 %Session=[1,2,3];

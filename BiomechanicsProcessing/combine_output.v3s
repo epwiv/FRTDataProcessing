@@ -19,5 +19,5 @@ Open_File
 ;
 
 File_Save_As
-/FILE_NAME=::FOLDER&Report.cmz 
+/FILE_NAME=::FOLDER&AllFiles.cmz 
 ;

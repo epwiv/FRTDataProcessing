@@ -20,7 +20,7 @@ Types:
   Session:
     Session:
       Fields: [Session ID, Operator]
-      Measurements: [Static, Pointer, Overground, No_Resistance, Training, Catch]
+      Measurements: [N_Static, N_Pointer, N_Overground, B_Static, B_Pointer, B_No_Resistance, B_Training, B_Catch]
       Analyses: [Processing2]
       Display order: [Session ID, Operator, Comments]
       Directory pattern: $Session ID$
@@ -31,22 +31,23 @@ Measurements:
     Minimum count: 1
     Maximum count: 1
     Count: 1
-  Static:
-    Heading: Static
+  N_Static:
+    Heading: No Brace Static
     Measurement length: 10
     Measurement type: Static
     AIM models: Static.qam
-    Minimum count: 2
-    Count: 2
-  Pointer:
-    Heading: Pointer
+    Maximum count: 3
+    Minimum count: 1
+    Count: 1
+  N_Pointer:
+    Heading: No Brace Pointer
     Measurement length: 60
     Measurement type: Static
     AIM models: Static.qam
-    Maximum count: 4
-    Minimum count: 2
-    Count: 2
-  Overground:
+    Maximum count: 3
+    Minimum count: 1
+    Count: 1
+  N_Overground:
     Heading: Overground
     Measurement length: 20
     Maximum count: 4
@@ -54,27 +55,43 @@ Measurements:
     Count: 2
     Measurement type: Dynamic
     AIM models: Dynamic.qam
-  No_Resistance:
-    Heading: No_Resistance
+  B_Static:
+    Heading: Brace Static
+    Measurement length: 10
+    Measurement type: Static
+    AIM models: Static.qam
+    Maximum count: 3
+    Minimum count: 1
+    Count: 1
+  B_Pointer:
+    Heading: Brace Pointer
+    Measurement length: 60
+    Measurement type: Static
+    AIM models: Static.qam
+    Maximum count: 3
+    Minimum count: 1
+    Count: 1
+  B_No_Resistance:
+    Heading: No Resistance
     Measurement length: 120
     Maximum count: 3
     Count: 1
     Measurement type: Dynamic
     AIM models: Dynamic.qam
-  Training:
+  B_Training:
     Heading: Training
     Measurement length: 300
-    Maximum count: 7
+    Maximum count: 6
     Minimum count: 4
-    Count: 5
+    Count: 4
     Measurement type: Dynamic
     AIM models: Dynamic.qam
-  Catch:
+  B_Catch:
     Heading: Catch
     Measurement length: 30
-    Maximum count: 6
+    Maximum count: 5
     Minimum count: 3
-    Count: 4
+    Count: 3
     Measurement type: Dynamic
     AIM models: Dynamic.qam2
 
@@ -118,7 +135,7 @@ Fields:
     Readonly: Yes
   Session ID:
     Type: Enum
-    Values: [ECB, ELASTIC, HIP KNEE]
+    Values: [ECB Knee, Elastic Knee, ECB Hip Knee]
     Inherit: Connect
   Operator:
     Type: String
