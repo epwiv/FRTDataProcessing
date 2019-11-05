@@ -1,15 +1,21 @@
 # FRTDataProcessing
 Codes used to process data for my dissertation
 
-1. Biomechanics data during training are collected with Qualisys camera system, using a project automation framework (PAF) project specific to the collection.
--See PAF settings
--See pipeline
+1. BiomechanicsProcessing: folder containing all softwares for biomechanics processing. 
 
-2. Data processed in Visual 3D using a custom pipeline
--See file
+  Collection softwares: data during training are collected with Qualisys camera system, using a project automation framework (PAF)           project specific to the collection.
+  
+    *See PAF settings file: Settings.paf
+    *See pipeline: combine_outputs.v3s
+      Note: pipeline should be put into the templates folder of the project 
+  
+  V3D data processing softwares: data processed in Visual 3D using a custom pipeline
+    
+    *See pipeline (still need from kaitlyn)
+    
+  Postprocessing softwares: Pipeline outputs individual files for each walking trial. A custom matlab script compiles all of these data       (from each subject, session, and trial) into a single spreadsheet
 
-3. Pipeline outputs individual files for each walking trial. A custom matlab script compiles all of these data (from each subject, session, and trial) into a single spreadsheet
--See FRTV3DDataCompile.m
+    *See MATLAB script: FRTV3DDataCompile.m
 
 ...
 
