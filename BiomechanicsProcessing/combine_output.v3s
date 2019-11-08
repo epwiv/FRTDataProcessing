@@ -1,23 +1,39 @@
- 
 
 File_New
-
 ;
+
 
 ! ==================================
 ! Load files
 ! ==================================
-! ==================================
-! ==================================
-Set_Pipeline_Parameter_To_Folder_Path
-/PARAMETER_NAME=FOLDER
-/PARAMETER_VALUE=
+
+File_Open 
+/FILE_NAME=<?=$working_directory?>*Dynamic*.c3d
+; 
+
+Create_Hybrid_Model
+/FILE_NAME=<?=$working_directory;?>N_Static*.c3d
 ;
 
-Open_File
-/File_Name=::FOLDER&*.c3d
+Assign_Model_File
+/MODEL_NAME=<?=$working_directory;?>N_Static*.c3d
+/MOTION_FILE_NAMES=<?=$working_directory?>N_Dynamic*.c3d
 ;
+
+Create_Hybrid_Model
+/FILE_NAME=<?=$working_directory;?>B_Static*.c3d
+;
+
+Assign_Model_File
+/MODEL_NAME=<?=$working_directory;?>B_Static*.c3d
+/MOTION_FILE_NAMES=<?=$working_directory?>B_Dynamic*.c3d
+;
+
+!====================================================
+!Save cmz
+!====================================================
 
 File_Save_As
-/FILE_NAME=::FOLDER&AllFiles.cmz 
+/FILE_NAME=<?=$working_directory . 'AllFiles.cmz'; ?> 
+!/File_Name=<?=$working_directory;?> ::FOLDER;
 ;

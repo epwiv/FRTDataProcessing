@@ -20,17 +20,13 @@ Types:
   Session:
     Session:
       Fields: [Session ID, Operator]
-      Measurements: [N_Static, N_Pointer, N_Overground, B_Static, B_Pointer, B_No_Resistance, B_Training, B_Catch]
-      Analyses: [Processing2]
+      Measurements: [N_Static, N_Dynamic_Pointer, N_Dynamic_Pre_Overground, B_Static, B_Dynamic_Pointer, B_Dynamic_NoResistance, B_Dynamic_Training, B_Dynamic_Catch, N_Dynamic_Post_Overground]
+      Analyses: [Processing]
       Display order: [Session ID, Operator, Comments]
       Directory pattern: $Session ID$
 
 Measurements:
-  Fields:
-    Measurement length: 30
-    Minimum count: 1
-    Maximum count: 1
-    Count: 1
+
   N_Static:
     Heading: No Brace Static
     Measurement length: 10
@@ -39,16 +35,16 @@ Measurements:
     Maximum count: 3
     Minimum count: 1
     Count: 1
-  N_Pointer:
+  N_Dynamic_Pointer:
     Heading: No Brace Pointer
     Measurement length: 60
-    Measurement type: Static
-    AIM models: Static.qam
+    Measurement type: Dynamic
+    AIM models: Dynamic.qam
     Maximum count: 3
     Minimum count: 1
     Count: 1
-  N_Overground:
-    Heading: Overground
+  N_Dynamic_Pre_Overground:
+    Heading: Pre Overground
     Measurement length: 20
     Maximum count: 4
     Minimum count: 2
@@ -63,22 +59,22 @@ Measurements:
     Maximum count: 3
     Minimum count: 1
     Count: 1
-  B_Pointer:
+  B_Dynamic_Pointer:
     Heading: Brace Pointer
     Measurement length: 60
-    Measurement type: Static
-    AIM models: Static.qam
+    Measurement type: Dynamic
+    AIM models: Dynamic.qam
     Maximum count: 3
     Minimum count: 1
     Count: 1
-  B_No_Resistance:
+  B_Dynamic_NoResistance:
     Heading: No Resistance
     Measurement length: 120
     Maximum count: 3
     Count: 1
     Measurement type: Dynamic
     AIM models: Dynamic.qam
-  B_Training:
+  B_Dynamic_Training:
     Heading: Training
     Measurement length: 300
     Maximum count: 6
@@ -86,7 +82,7 @@ Measurements:
     Count: 4
     Measurement type: Dynamic
     AIM models: Dynamic.qam
-  B_Catch:
+  B_Dynamic_Catch:
     Heading: Catch
     Measurement length: 30
     Maximum count: 5
@@ -94,16 +90,17 @@ Measurements:
     Count: 3
     Measurement type: Dynamic
     AIM models: Dynamic.qam2
+  N_Dynamic_Post_Overground:
+    Heading: Post Overground
+    Measurement length: 20
+    Maximum count: 4
+    Minimum count: 2
+    Count: 2
+    Measurement type: Dynamic
+    AIM models: Dynamic.qam	
 
 Analyses:
   Processing:
-    Type: External program
-    Program display name: Visual 3d
-    Export session: Yes
-    Export measurements: c3d
-    Arguments: [/s, $WorkingDirectory$combine_output.v3s]
-    Template files: ['*.v3s']
-  Processing2:
     Type: External program
     Program display name: Visual 3d
     Export session: Yes
